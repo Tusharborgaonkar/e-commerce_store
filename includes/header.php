@@ -85,55 +85,138 @@
 <!-- ════════════════════════════════════════
      ANNOUNCEMENT TICKER
 ════════════════════════════════════════ -->
-<div class="bg-[#552c1c] text-white py-2 text-xs font-medium tracking-wide ticker-wrap">
-  <div class="ticker-track">
-    <span>✦ WhatsApp | 9227130063</span>
-    <span class="opacity-40">|</span>
-    <span>INSTANT 10% OFF ON ALL PREPAID ORDERS</span>
-    <span class="opacity-40">|</span>
-    <span>Trusted by 10M+ customers ❤️</span>
-    <span class="opacity-40">|</span>
-    <span>FREE SHIPPING on all orders</span>
-    <span class="opacity-40">|</span>
-    <span>Cash on Delivery Available</span>
-    <span class="opacity-40">|</span>
-    <span>7-Day Easy Returns</span>
-    <span class="opacity-40">|</span>
-    <!-- duplicate for seamless loop -->
-    <span>✦ WhatsApp | 9227130063</span>
-    <span class="opacity-40">|</span>
-    <span>INSTANT 10% OFF ON ALL PREPAID ORDERS</span>
-    <span class="opacity-40">|</span>
-    <span>Trusted by 10M+ customers ❤️</span>
-    <span class="opacity-40">|</span>
-    <span>FREE SHIPPING on all orders</span>
-    <span class="opacity-40">|</span>
-    <span>Cash on Delivery Available</span>
-    <span class="opacity-40">|</span>
-    <span>7-Day Easy Returns</span>
-    <span class="opacity-40">|</span>
-  </div>
-</div>
-
 <!-- ════════════════════════════════════════
-     STICKY HEADER
+     COMPLETE HEADER CONTAINER
 ════════════════════════════════════════ -->
-<header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+<div id="header-container" class="fixed top-0 left-0 right-0 z-50 transition-transform duration-300">
+  
+  <!-- Marquee Bar -->
+  <div class="bg-[#552c1c] text-white py-3 text-sm font-medium">
+    <marquee behavior="scroll" direction="left" scrollamount="8" class="whitespace-nowrap">
+      INSTANT 10% OFF ON ALL PREPAID ORDERS &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Trusted by 10M+ customers 💖 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; ✨ WhatsApp | 9227130063 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; FREE SHIPPING on all orders &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Cash on Delivery Available &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 7-Day Easy Returns &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; INSTANT 10% OFF ON ALL PREPAID ORDERS &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Trusted by 10M+ customers 💖 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; ✨ WhatsApp | 9227130063 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; FREE SHIPPING on all orders &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Cash on Delivery Available &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 7-Day Easy Returns &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; INSTANT 10% OFF ON ALL PREPAID ORDERS &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Trusted by 10M+ customers 💖 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; ✨ WhatsApp | 9227130063 &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; FREE SHIPPING on all orders &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; Cash on Delivery Available &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 7-Day Easy Returns &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+    </marquee>
+  </div>
+
+  <!-- Main Header -->
+  <div class="bg-white border-b border-gray-100 shadow-sm">
+
+    <!-- ── Top Row: Search | Logo | Icons ── -->
+    <div class="max-w-7xl mx-auto px-4 lg:px-10">
+      <div class="flex items-center justify-between h-[90px]">
+
+        <!-- LEFT: Search Icon (desktop) + Hamburger (mobile) -->
+        <div class="flex items-center gap-3">
+          <button id="menu-toggle"
+            class="lg:hidden text-gray-600 hover:text-[#552c1c] text-2xl focus:outline-none transition-colors">
+            <i class="fas fa-bars"></i>
+          </button>
+          <button id="search-toggle"
+            class="text-gray-600 hover:text-[#552c1c] text-2xl focus:outline-none transition-colors"
+            aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- CENTER: Logo -->
+        <a href="index.php" class="flex flex-col items-center leading-none select-none">
+          <span class="text-[2rem] md:text-[2.2rem] font-bold tracking-[0.08em] text-gray-900"
+                style="font-family:'Poppins',sans-serif;">
+            HOME<span class="text-gray-900">'</span>WERA
+            <sup class="text-[12px] font-normal align-super">™</sup>
+          </span>
+          <span class="text-[10px] md:text-[11px] tracking-[0.22em] text-gray-400 font-medium uppercase mt-0.5">
+            The Trusted Hub
+          </span>
+        </a>
+
+        <!-- RIGHT: Account + Cart -->
+        <div class="flex items-center gap-5">
+          <a href="#" class="relative text-gray-600 hover:text-[#552c1c] transition-colors" aria-label="Account">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="8"  r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span class="absolute -top-0.5 -right-1 text-[#f5a623] text-[12px] font-black leading-none">⚡</span>
+          </a>
+          <button id="cart-toggle"
+            class="relative text-gray-600 hover:text-[#552c1c] transition-colors focus:outline-none"
+            aria-label="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+              <path d="M6 2 3 6v14a2 2 0 002 2h14a2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            <span id="cart-count"
+              class="absolute -top-2 -right-2 bg-[#552c1c] text-white text-[10px] font-bold
+                     min-w-[18px] h-5 px-1 rounded-full flex items-center justify-center leading-none">
+              0
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Navigation Row ── -->
+    <div class="hidden lg:block border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 lg:px-10">
+        <nav class="flex items-center justify-center gap-2 h-14">
+          <?php
+          $current = basename($_SERVER['PHP_SELF']);
+          $navItems = [
+            'index.php'       => 'Home',
+            'catalog.php'     => 'Catalog',
+            'contact.php'     => 'Contact',
+            'track-order.php' => 'Track order',
+          ];
+          foreach ($navItems as $file => $label):
+            $isActive = ($current === $file);
+          ?>
+            <a href="<?php echo $file; ?>"
+               class="<?php echo $isActive
+                 ? 'bg-[#552c1c] text-white'
+                 : 'text-gray-700 hover:text-[#552c1c]'; ?>
+                      px-6 py-2.5 rounded-lg text-[15px] font-medium transition-colors duration-200">
+              <?php echo $label; ?>
+            </a>
+          <?php endforeach; ?>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ── Mobile Menu ── -->
+    <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 px-4 pb-4">
+      <nav class="flex flex-col pt-3 text-sm font-medium text-gray-700">
+        <?php foreach ($navItems as $file => $label):
+          $isActive = ($current === $file);
+        ?>
+          <a href="<?php echo $file; ?>"
+             class="<?php echo $isActive ? 'text-[#552c1c] font-semibold' : 'hover:text-[#552c1c]'; ?>
+                    py-3 border-b border-gray-100 transition-colors">
+            <?php echo $label; ?>
+          </a>
+        <?php endforeach; ?>
+      </nav>
+    </div>
+  </div>
+
+</div>
 
   <!-- ── Top Row: Search | Logo | Icons ── -->
   <div class="max-w-7xl mx-auto px-4 lg:px-10">
-    <div class="flex items-center justify-between h-[72px]">
+    <div class="flex items-center justify-between h-[90px]">
 
       <!-- LEFT: Search Icon (desktop) + Hamburger (mobile) -->
       <div class="flex items-center gap-3">
         <!-- Hamburger – mobile only -->
         <button id="menu-toggle"
-          class="lg:hidden text-gray-600 hover:text-[#552c1c] text-xl focus:outline-none transition-colors">
+          class="lg:hidden text-gray-600 hover:text-[#552c1c] text-2xl focus:outline-none transition-colors">
           <i class="fas fa-bars"></i>
         </button>
         <!-- Search – always visible -->
         <button id="search-toggle"
-          class="text-gray-600 hover:text-[#552c1c] text-xl focus:outline-none transition-colors"
+          class="text-gray-600 hover:text-[#552c1c] text-2xl focus:outline-none transition-colors"
           aria-label="Search">
           <i class="fas fa-search"></i>
         </button>
@@ -141,42 +224,42 @@
 
       <!-- CENTER: Logo -->
       <a href="index.php" class="flex flex-col items-center leading-none select-none">
-        <span class="text-[1.55rem] font-bold tracking-[0.08em] text-gray-900"
+        <span class="text-[2rem] md:text-[2.2rem] font-bold tracking-[0.08em] text-gray-900"
               style="font-family:'Poppins',sans-serif;">
           HOME<span class="text-gray-900">'</span>WERA
-          <sup class="text-[10px] font-normal align-super">™</sup>
+          <sup class="text-[12px] font-normal align-super">™</sup>
         </span>
-        <span class="text-[9px] tracking-[0.22em] text-gray-400 font-medium uppercase mt-0.5">
+        <span class="text-[10px] md:text-[11px] tracking-[0.22em] text-gray-400 font-medium uppercase mt-0.5">
           The Trusted Hub
         </span>
       </a>
 
       <!-- RIGHT: Account + Cart -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-5">
         <!-- Account icon (KwikPass-style person with lightning bolt, simplified) -->
         <a href="#" class="relative text-gray-600 hover:text-[#552c1c] transition-colors" aria-label="Account">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
             <circle cx="12" cy="8"  r="4"/>
             <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
           </svg>
           <!-- yellow lightning bolt accent like HomeWera -->
-          <span class="absolute -top-0.5 -right-1 text-[#f5a623] text-[10px] font-black leading-none">⚡</span>
+          <span class="absolute -top-0.5 -right-1 text-[#f5a623] text-[12px] font-black leading-none">⚡</span>
         </a>
 
         <!-- Cart icon -->
         <button id="cart-toggle"
           class="relative text-gray-600 hover:text-[#552c1c] transition-colors focus:outline-none"
           aria-label="Cart">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
             <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
           </svg>
           <span id="cart-count"
-            class="absolute -top-2 -right-2 bg-[#552c1c] text-white text-[9px] font-bold
-                   min-w-[16px] h-4 px-0.5 rounded-full flex items-center justify-center leading-none">
+            class="absolute -top-2 -right-2 bg-[#552c1c] text-white text-[10px] font-bold
+                   min-w-[18px] h-5 px-1 rounded-full flex items-center justify-center leading-none">
             0
           </span>
         </button>
@@ -188,7 +271,7 @@
   <!-- ── Bottom Row: Desktop Nav (centered, below logo) ── -->
   <div class="hidden lg:block border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 lg:px-10">
-      <nav class="flex items-center justify-center gap-1 h-11">
+      <nav class="flex items-center justify-center gap-2 h-14">
 
         <?php
         $current = basename($_SERVER['PHP_SELF']);
@@ -205,7 +288,7 @@
              class="<?php echo $isActive
                ? 'bg-[#552c1c] text-white'
                : 'text-gray-700 hover:text-[#552c1c]'; ?>
-                    px-5 py-1.5 rounded-md text-sm font-medium transition-colors duration-200">
+                    px-6 py-2.5 rounded-lg text-[15px] font-medium transition-colors duration-200">
             <?php echo $label; ?>
           </a>
         <?php endforeach; ?>
@@ -299,5 +382,5 @@
 
 </div>
 
-<!-- ════════ MAIN CONTENT STARTS ════════ -->
-<main>
+<!-- ═════ MAIN CONTENT STARTS ═════ -->
+<main style="margin-top: 148px;">

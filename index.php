@@ -8,10 +8,12 @@
 
     <!-- Slide 1 -->
     <div class="hero-slide active">
-      <img src="assets/hero-bg.jpg" alt="Home Decor Collection"
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80" alt="Modern Kitchen Decor"
         class="w-full h-[55vw] max-h-[580px] min-h-[260px] object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-      <div class="absolute bottom-8 right-6 md:bottom-14 md:right-14">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+      <div class="absolute bottom-8 left-6 md:bottom-14 md:left-14 text-white">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.2em] mb-2 opacity-80">New Collection</p>
+        <h2 class="text-xl md:text-4xl font-bold mb-4 leading-tight drop-shadow">Elevate Your<br/>Kitchen & Home</h2>
         <a href="catalog.php"
           class="inline-block bg-white text-[#552c1c] font-semibold text-sm px-7 py-3 rounded-xl shadow-lg hover:bg-[#552c1c] hover:text-white transition-all duration-300">
           Shop Now
@@ -21,12 +23,12 @@
 
     <!-- Slide 2 -->
     <div class="hero-slide">
-      <img src="assets/product1.jpg" alt="Kitchen Storage"
+      <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1600&q=80" alt="Kitchen Storage"
         class="w-full h-[55vw] max-h-[580px] min-h-[260px] object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
       <div class="absolute bottom-8 left-6 md:bottom-14 md:left-14 text-white">
-        <p class="text-[10px] font-semibold uppercase tracking-[0.2em] mb-2 opacity-80">New Arrival</p>
-        <h2 class="text-xl md:text-4xl font-bold mb-4 leading-tight drop-shadow">Air-Tight Kitchen<br/>Storage Containers</h2>
+        <p class="text-[10px] font-semibold uppercase tracking-[0.2em] mb-2 opacity-80">Best Seller</p>
+        <h2 class="text-xl md:text-4xl font-bold mb-4 leading-tight drop-shadow">Premium Storage<br/>Solutions</h2>
         <a href="catalog.php"
           class="inline-block bg-[#552c1c] text-white font-semibold text-sm px-7 py-3 rounded-xl shadow-lg hover:bg-[#6b3622] transition-all duration-300">
           Shop Now
@@ -36,12 +38,12 @@
 
     <!-- Slide 3 -->
     <div class="hero-slide">
-      <img src="assets/product2.jpg" alt="Home Essentials"
+      <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=1600&q=80" alt="Home Decor"
         class="w-full h-[55vw] max-h-[580px] min-h-[260px] object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
       <div class="absolute bottom-8 left-6 md:bottom-14 md:left-14 text-white">
-        <p class="text-[10px] font-semibold uppercase tracking-[0.2em] mb-2 opacity-80">Best Seller</p>
-        <h2 class="text-xl md:text-4xl font-bold mb-4 leading-tight drop-shadow">Premium Home<br/>Essentials</h2>
+        <p class="text-[10px] font-semibold uppercase tracking-[0.2em] mb-2 opacity-80">New Arrival</p>
+        <h2 class="text-xl md:text-4xl font-bold mb-4 leading-tight drop-shadow">Beautiful Home<br/>Decor Essentials</h2>
         <a href="catalog.php"
           class="inline-block bg-[#552c1c] text-white font-semibold text-sm px-7 py-3 rounded-xl shadow-lg hover:bg-[#6b3622] transition-all duration-300">
           Shop Now
@@ -90,7 +92,7 @@
           'price'    => 'Rs. 1,149.00',
           'compare'  => 'Rs. 1,749.00',
           'discount' => '34',
-          'img'      => 'product1.jpg',
+          'img'      => 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&q=80',
           'href'     => 'catalog.php',
         ],
         [
@@ -98,7 +100,7 @@
           'price'    => 'Rs. 699.00',
           'compare'  => 'Rs. 999.00',
           'discount' => '30',
-          'img'      => 'product2.jpg',
+          'img'      => 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=600&q=80',
           'href'     => 'catalog.php',
         ],
         [
@@ -106,7 +108,7 @@
           'price'    => 'Rs. 1,299.00',
           'compare'  => 'Rs. 1,699.00',
           'discount' => '23',
-          'img'      => 'product3.jpg',
+          'img'      => 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80',
           'href'     => 'catalog.php',
         ],
         [
@@ -114,7 +116,7 @@
           'price'    => 'Rs. 599.00',
           'compare'  => 'Rs. 999.00',
           'discount' => '40',
-          'img'      => 'product4.jpg',
+          'img'      => 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80',
           'href'     => 'catalog.php',
         ],
         [
@@ -122,7 +124,7 @@
           'price'    => 'Rs. 899.00',
           'compare'  => 'Rs. 1,999.00',
           'discount' => '55',
-          'img'      => 'product5.jpg',
+          'img'      => 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=600&q=80',
           'href'     => 'catalog.php',
         ],
         [
@@ -130,7 +132,7 @@
           'price'    => 'Rs. 399.00',
           'compare'  => 'Rs. 799.00',
           'discount' => '50',
-          'img'      => 'product6.jpg',
+          'img'      => 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=600&q=80',
           'href'     => 'catalog.php',
         ],
       ];
@@ -143,7 +145,7 @@
         <!-- Image wrapper with bottom-left badge -->
         <a href="<?php echo $p['href']; ?>" class="block relative">
           <img
-            src="assets/<?php echo $p['img']; ?>"
+            src="<?php echo $p['img']; ?>"
             alt="<?php echo htmlspecialchars($p['name']); ?>"
             class="w-full aspect-square object-cover"
           />
@@ -409,118 +411,123 @@
 <!-- ═══════════════════════════════════════
      COLLECTIONS GRID
 ═══════════════════════════════════════ -->
-<section class="bg-gray-50 py-12 md:py-16">
-  <div class="max-w-7xl mx-auto px-4 lg:px-10">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Collections</h2>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+<section class="bg-white py-12 md:py-16">
+  <div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+
+    <h2 class="text-center text-[2.2rem] md:text-[2.6rem] font-bold text-gray-900 mb-10 tracking-tight">
+      Collections
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
       <?php
       $collections = [
-        ['title' => 'Home & Kitchen Essentials', 'img' => 'product1.jpg', 'href' => 'catalog.php?cat=kitchen'],
-        ['title' => 'Home Decor',                'img' => 'product3.jpg', 'href' => 'catalog.php?cat=decor'],
-        ['title' => 'Women Essentials',          'img' => 'product6.jpg', 'href' => 'catalog.php?cat=women'],
+        ['title' => 'Home & kitchen Essentials', 'img' => 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80', 'href' => 'catalog.php?cat=kitchen'],
+        ['title' => 'Home Decor',                'img' => 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80', 'href' => 'catalog.php?cat=decor'],
+        ['title' => 'Women Essentials',          'img' => 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80', 'href' => 'catalog.php?cat=women'],
       ];
       foreach ($collections as $c):
       ?>
-      <a href="<?php echo $c['href']; ?>"
-        class="relative group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 block aspect-square">
-        <img src="assets/<?php echo $c['img']; ?>" alt="<?php echo htmlspecialchars($c['title']); ?>"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-          <h3 class="font-semibold text-sm md:text-base leading-tight"><?php echo htmlspecialchars($c['title']); ?></h3>
-          <span class="inline-flex items-center gap-1 text-xs text-white/70 mt-1">
-            Shop Now <i class="fas fa-arrow-right text-[9px]"></i>
-          </span>
+      <a href="<?php echo $c['href']; ?>" class="block group">
+        <!-- Image: rounded corners, no overlay, no shadow -->
+        <div class="rounded-2xl overflow-hidden">
+          <img
+            src="<?php echo $c['img']; ?>"
+            alt="<?php echo htmlspecialchars($c['title']); ?>"
+            class="w-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+            style="aspect-ratio:4/3;"
+          />
         </div>
+        <!-- Title + arrow BELOW image, bold, centered -->
+        <p class="mt-4 text-[1rem] font-bold text-gray-900 flex items-center justify-center gap-1.5
+                   group-hover:text-[#552c1c] transition-colors duration-200">
+          <?php echo htmlspecialchars($c['title']); ?>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-[1.1rem] h-[1.1rem] shrink-0"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </p>
       </a>
       <?php endforeach; ?>
     </div>
+
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════
-     MILESTONES
+     MILESTONE IMAGE SECTION
 ═══════════════════════════════════════ -->
-<section class="bg-[#552c1c] py-12 md:py-16 text-white relative overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.06]"
-    style="background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:22px 22px;"></div>
-  <div class="max-w-7xl mx-auto px-4 lg:px-10 relative">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl md:text-3xl font-bold">
-        HOME'WERA – Our <span class="underline decoration-white/40 decoration-2 underline-offset-4">Milestones</span> ❤️
-      </h2>
+<section class="bg-white py-8">
+  <div class="w-full px-0">
+    <div class="text-center">
+      <img 
+        src="assets/images/milestones.png" 
+        alt="HOME'WERA Milestones" 
+        class="w-full h-auto"
+      />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <?php
-      $milestones = [
-        ['pct' => 95, 'title' => '10 Lakh+ Orders',    'desc' => 'Our team has successfully delivered over 10L+ orders across 224+ cities'],
-        ['pct' => 99, 'title' => 'Zero-Risk Shopping', 'desc' => "Buy with complete confidence. Try it for 7 days — if it doesn't feel right, we'll resolve it quickly."],
-        ['pct' => 96, 'title' => 'Positive Reviews',   'desc' => '9 out of 10 customers have zero complaint about our products'],
-      ];
-      foreach ($milestones as $m):
-        $offset = round(176 * (1 - $m['pct'] / 100));
-      ?>
-      <div class="flex items-start gap-5 bg-white/10 rounded-2xl p-6">
-        <div class="relative shrink-0 w-16 h-16">
-          <svg class="w-16 h-16 -rotate-90" viewBox="0 0 64 64">
-            <circle cx="32" cy="32" r="28" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="6"/>
-            <circle cx="32" cy="32" r="28" fill="none" stroke="#facc15" stroke-width="6"
-              stroke-dasharray="176" stroke-dashoffset="<?php echo $offset; ?>"
-              stroke-linecap="round"/>
-          </svg>
-          <span class="absolute inset-0 flex items-center justify-center text-[11px] font-bold text-yellow-300">
-            <?php echo $m['pct']; ?>%
-          </span>
-        </div>
-        <div>
-          <h3 class="font-bold text-base mb-1"><?php echo $m['title']; ?></h3>
-          <p class="text-white/65 text-sm leading-relaxed"><?php echo $m['desc']; ?></p>
-        </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-    <p class="text-center text-white/40 text-xs mt-8 italic">Trusted by 200,000+ Homes</p>
   </div>
 </section>
+
+
 
 <!-- ═══════════════════════════════════════
      VIDEO / REELS SECTION
 ═══════════════════════════════════════ -->
 <section class="bg-white py-12 md:py-16">
   <div class="max-w-7xl mx-auto px-4 lg:px-10">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900">See It In Action</h2>
-      <p class="text-gray-400 text-sm mt-1">Watch how our products transform everyday living</p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-      <?php
-      $reels = [
-        ['img' => 'product1.jpg', 'title' => 'Storage Containers Demo'],
-        ['img' => 'product2.jpg', 'title' => 'Sprouts Maker in Use'],
-        ['img' => 'product3.jpg', 'title' => 'Spice Jar Unboxing'],
-        ['img' => 'product4.jpg', 'title' => 'Silicone Idli Maker'],
-        ['img' => 'product5.jpg', 'title' => 'Matka Stand Setup'],
-        ['img' => 'product6.jpg', 'title' => 'Sun Protection Review'],
-      ];
-      foreach ($reels as $r):
-      ?>
-      <div class="relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
-        <img src="assets/<?php echo $r['img']; ?>" alt="<?php echo htmlspecialchars($r['title']); ?>"
-          class="w-full aspect-[9/16] object-cover group-hover:scale-105 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-12 h-12 bg-[#552c1c]/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-            <i class="fas fa-play text-white text-base ml-1"></i>
+    
+    <!-- Video Carousel Container -->
+    <div class="relative px-12">
+      
+      <!-- Video Track Container - Shows only 3 videos -->
+      <div class="overflow-hidden">
+        <div id="video-track" class="flex transition-transform duration-500 ease-in-out gap-4 md:gap-6">
+          <?php
+          $reels = [
+            ['img' => 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80', 'title' => 'Kitchen Storage Demo'],
+            ['img' => 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&q=80', 'title' => 'Sprouts Maker in Use'],
+            ['img' => 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=400&q=80', 'title' => 'Home Decor Styling'],
+            ['img' => 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=400&q=80', 'title' => 'Glass Jar Unboxing'],
+            ['img' => 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400&q=80', 'title' => 'Matka Stand Setup'],
+            ['img' => 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=400&q=80', 'title' => 'Lifestyle Essentials'],
+            ['img' => 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80', 'title' => 'Product Review'],
+            ['img' => 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&q=80', 'title' => 'Unboxing Video'],
+            ['img' => 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=400&q=80', 'title' => 'Setup Guide']
+          ];
+          
+          foreach ($reels as $r):
+          ?>
+          <div class="flex-shrink-0 w-1/3 relative rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <img src="<?php echo $r['img']; ?>" alt="<?php echo htmlspecialchars($r['title']); ?>"
+              class="w-full aspect-[9/16] object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-12 h-12 bg-[#552c1c]/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                <i class="fas fa-play text-white text-base ml-1"></i>
+              </div>
+            </div>
+            <p class="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold leading-tight">
+              <?php echo htmlspecialchars($r['title']); ?>
+            </p>
           </div>
+          <?php endforeach; ?>
         </div>
-        <p class="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold leading-tight">
-          <?php echo htmlspecialchars($r['title']); ?>
-        </p>
       </div>
-      <?php endforeach; ?>
+
+      <!-- Left Arrow -->
+      <button id="scroll-left" 
+        class="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:text-[#552c1c] transition-all duration-200 z-10">
+        <i class="fas fa-chevron-left text-lg"></i>
+      </button>
+
+      <!-- Right Arrow -->
+      <button id="scroll-right" 
+        class="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:text-[#552c1c] transition-all duration-200 z-10">
+        <i class="fas fa-chevron-right text-lg"></i>
+      </button>
+
     </div>
+    
   </div>
 </section>
 

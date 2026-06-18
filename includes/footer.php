@@ -43,125 +43,122 @@
 <!-- ═══════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════ -->
-<footer class="bg-[#552c1c] text-white pt-2 pb-8">
-  <div class="max-w-7xl mx-auto px-4 lg:px-10">
+<footer class="bg-[#5d3a26] text-white w-full min-h-screen flex items-center">
+  <div class="w-full px-8 lg:px-16 py-16">
 
-    <!-- Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-12 border-b border-white/10">
+    <!-- Main Footer Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto mb-16">
 
-      <!-- Brand -->
+      <!-- Column 1: HOME'WERA Brand -->
       <div>
-        <div class="mb-3">
-          <span class="text-2xl font-bold tracking-[0.08em]">
-            HOME<span class="text-yellow-300">'WERA</span>
+        <div class="mb-8">
+          <span class="text-[2.5rem] font-bold tracking-[0.08em] text-white block leading-tight">
+            HOME'WERA
           </span>
+          <p class="text-[0.9rem] text-white/70 mt-2 font-medium tracking-wider">THE TRUSTED HUB</p>
         </div>
-        <p class="text-white/60 text-sm leading-relaxed mb-5">
-          A Brand of Keshwala Enterprises<br/>
-          194/2, opp. Anand Industrial Estate,<br/>
-          Narolgam, Ahmedabad
+      </div>
+
+      <!-- Column 2: A Brand of Keshwala Enterprises -->
+      <div>
+        <h4 class="text-white font-semibold text-[1.3rem] mb-4">A Brand of Keshwala Enterprises</h4>
+        <p class="text-white/80 text-[1.1rem] leading-relaxed italic">
+          194/2, opp. Anand industrial Estate,Narolgam, Ahmedabad
         </p>
-        <div class="flex gap-3">
-          <a href="https://www.facebook.com/share/1Ci5B14sMJ/" target="_blank"
-            class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors">
-            <i class="fab fa-facebook-f text-sm"></i>
-          </a>
-          <a href="https://www.instagram.com/home_wera" target="_blank"
-            class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors">
-            <i class="fab fa-instagram text-sm"></i>
-          </a>
-          <a href="https://wa.me/919227130063" target="_blank"
-            class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors">
-            <i class="fab fa-whatsapp text-sm"></i>
-          </a>
-          <a href="#"
-            class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors">
-            <i class="fab fa-youtube text-sm"></i>
-          </a>
-        </div>
       </div>
 
-      <!-- Reach Out -->
+      <!-- Column 3: Reach out to us -->
       <div>
-        <h4 class="font-semibold text-yellow-300 mb-4">Reach out to us</h4>
-        <ul class="space-y-3 text-white/60 text-sm">
-          <li class="flex items-start gap-2">
-            <i class="fas fa-phone mt-0.5 text-yellow-300 w-4 shrink-0"></i>
-            <span>+91 9227130063</span>
+        <h4 class="font-semibold text-white text-[1.3rem] mb-6">Reach out to us</h4>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-4">
+            <span class="text-white/90 text-[1.1rem]">•</span>
+            <span class="text-white/90 text-[1.1rem]">+91 9227130063</span>
           </li>
-          <li class="flex items-start gap-2">
-            <i class="fas fa-envelope mt-0.5 text-yellow-300 w-4 shrink-0"></i>
-            <span>HomeWera.help@gmail.com</span>
-          </li>
-          <li class="flex items-start gap-2">
-            <i class="fab fa-whatsapp mt-0.5 text-yellow-300 w-4 shrink-0"></i>
-            <a href="https://wa.me/919227130063"
-              class="hover:text-white transition-colors">Chat on WhatsApp</a>
+          <li class="flex items-center gap-4">
+            <span class="text-white/90 text-[1.1rem]">•</span>
+            <span class="text-white/90 text-[1.1rem]">HomeWera.help@gmail.com</span>
           </li>
         </ul>
       </div>
 
-      <!-- Policies -->
-      <div>
-        <h4 class="font-semibold text-yellow-300 mb-4">Policies</h4>
-        <ul class="space-y-2 text-white/60 text-sm">
-          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Shipping Policy</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Refund Policy</a></li>
-          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
-        </ul>
-      </div>
-
-      <!-- Company -->
-      <div>
-        <h4 class="font-semibold text-yellow-300 mb-4">Company</h4>
-        <ul class="space-y-2 text-white/60 text-sm">
-          <li><a href="https://wa.me/919227130063" class="hover:text-white transition-colors">Order Cancellation</a></li>
-          <li><a href="https://www.shiprocket.in/shipment-tracking/" target="_blank" class="hover:text-white transition-colors">Track Order</a></li>
-          <li><a href="contact.php" class="hover:text-white transition-colors">Contact Information</a></li>
-          <li><a href="catalog.php" class="hover:text-white transition-colors">All Products</a></li>
-        </ul>
-      </div>
+      <!-- Column 4: Empty for this row -->
+      <div></div>
 
     </div>
 
-    <!-- Payment Icons + Copyright -->
-    <div class="flex flex-col md:flex-row items-center justify-between gap-5 pt-6">
+    <!-- Second Row: Policies and Company -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto mb-16">
+      
+      <!-- Column 1: Policies -->
+      <div>
+        <h4 class="font-semibold text-white text-[1.3rem] mb-6">Policies</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-white/80 text-[1.1rem] hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="text-white/80 text-[1.1rem] hover:text-white transition-colors">Shipping Policy</a></li>
+          <li><a href="#" class="text-white/80 text-[1.1rem] hover:text-white transition-colors">Refund Policy</a></li>
+          <li><a href="#" class="text-white/80 text-[1.1rem] hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
 
-      <!-- Payment Badges -->
-      <div class="flex items-center gap-2 flex-wrap justify-center">
-        <div class="bg-white rounded px-2.5 h-8 flex items-center justify-center">
-          <span class="text-[11px] font-black text-[#097939]">UPI</span>
+      <!-- Column 2: Company -->
+      <div>
+        <h4 class="font-semibold text-white text-[1.3rem] mb-6">Company</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-white/80 text-[1.1rem] hover:text-white transition-colors">Order cancellation</a></li>
+          <li><a href="#" class="text-white/80 text-[1.1rem] hover:text-white transition-colors">Track order</a></li>
+          <li><a href="#" class="text-white/80 text-[1.1rem] hover:text-white transition-colors">Contact Information</a></li>
+        </ul>
+      </div>
+
+      <!-- Empty columns -->
+      <div></div>
+      <div></div>
+
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="flex justify-center gap-6 py-8 border-t border-white/20 max-w-7xl mx-auto">
+      <a href="https://www.facebook.com/share/1Ci5B14sMJ/" target="_blank"
+        class="w-12 h-12 rounded bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors">
+        <i class="fab fa-facebook-f text-white text-xl"></i>
+      </a>
+      <a href="https://www.instagram.com/home_wera" target="_blank"
+        class="w-12 h-12 rounded bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors">
+        <i class="fab fa-instagram text-white text-xl"></i>
+      </a>
+    </div>
+
+    <!-- Payment Methods + Copyright -->
+    <div class="flex flex-col items-center gap-8 pt-6 border-t border-white/20 max-w-7xl mx-auto">
+      
+      <!-- Payment Icons -->
+      <div class="flex items-center gap-3 flex-wrap justify-center">
+        <div class="bg-white rounded px-4 py-2 h-10 flex items-center justify-center">
+          <span class="text-[12px] font-black text-[#097939]">UPI</span>
         </div>
-        <div class="bg-white rounded px-2.5 h-8 flex items-center justify-center">
-          <span class="text-[10px] font-bold text-[#00b9f1]">Paytm</span>
+        <div class="bg-white rounded px-4 py-2 h-10 flex items-center justify-center">
+          <span class="text-[11px] font-bold text-[#00b9f1]">Paytm</span>
         </div>
-        <div class="bg-white rounded px-2.5 h-8 flex items-center justify-center gap-0.5">
-          <span class="text-[9px] font-bold">
+        <div class="bg-white rounded px-4 py-2 h-10 flex items-center justify-center gap-0.5">
+          <span class="text-[10px] font-bold">
             <span class="text-blue-500">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span><span class="text-blue-500">g</span><span class="text-green-600">l</span><span class="text-red-500">e</span>
           </span>
-          <span class="text-[9px] font-bold text-gray-600 ml-0.5">Pay</span>
+          <span class="text-[10px] font-bold text-gray-600 ml-0.5">Pay</span>
         </div>
-        <div class="bg-white rounded px-2.5 h-8 flex items-center justify-center">
-          <span class="text-[12px] font-black text-[#1a1f71] tracking-tight">VISA</span>
+        <div class="bg-white rounded px-4 py-2 h-10 flex items-center justify-center">
+          <span class="text-[10px] font-bold text-gray-700">Amazon</span>
         </div>
-        <div class="bg-white rounded px-2.5 h-8 flex items-center justify-center gap-[-4px]">
-          <div class="w-5 h-5 rounded-full bg-[#eb001b] opacity-90"></div>
-          <div class="w-5 h-5 rounded-full bg-[#f79e1b] opacity-90 -ml-2"></div>
-        </div>
-        <div class="bg-white rounded px-2.5 h-8 flex items-center justify-center">
-          <span class="text-[9px] font-bold text-gray-700 leading-tight text-center">
-            CASH ON<br/>DELIVERY
-          </span>
-        </div>
-        <div class="bg-white rounded px-2.5 h-8 flex items-center justify-center">
-          <span class="text-[9px] font-bold text-gray-700">Apple Pay</span>
+        <div class="bg-white rounded px-4 py-2 h-10 flex items-center justify-center">
+          <span class="text-[10px] font-bold text-gray-700">Apple Pay</span>
         </div>
       </div>
 
-      <p class="text-white/40 text-xs text-center">
-        &copy; <?php echo date('Y'); ?>, HOME'WERA &nbsp;·&nbsp; All Rights Reserved
+      <!-- Copyright -->
+      <p class="text-white/60 text-[1rem] text-center">
+        © 2026, HOME'WERA All Rights Reserved
       </p>
+
     </div>
 
   </div>

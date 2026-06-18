@@ -1,5 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ── Auto-hide Complete Header on Scroll ──
+  let lastScrollTop = 0;
+  const headerContainer = document.getElementById('header-container');
+  
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Scrolling down & past 100px - hide entire header container
+      if (headerContainer) {
+        headerContainer.style.transform = 'translateY(-100%)';
+      }
+    } else if (scrollTop < lastScrollTop) {
+      // Scrolling up - show entire header container
+      if (headerContainer) {
+        headerContainer.style.transform = 'translateY(0)';
+      }
+    }
+    
+    // When user reaches the very top, always show header
+    if (scrollTop <= 0) {
+      if (headerContainer) {
+        headerContainer.style.transform = 'translateY(0)';
+      }
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+
   // ── Scroll Progress Bar ──
   const progressBar = document.getElementById('scroll-progress');
   window.addEventListener('scroll', function () {
@@ -211,6 +240,45 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollTopBtn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  // ── Video Carousel (3 Videos Visible) ──
+  let currentVideoIndex = 0;
+  const videoTrack = document.getElementById('video-track');
+  const scrollLeftBtn = document.getElementById('scroll-left');
+  const scrollRightBtn = document.getElementById('scroll-right');
+  
+  if (scrollLeftBtn && scrollRightBtn && videoTrack) {
+    const totalVideos = videoTrack.children.length;
+    const videosVisible = 3; // Always show 3 videos
+    const maxIndex = totalVideos - videosVisible;
+    
+    function updateVideoCarousel() {
+      // Each video takes 1/3 of container width + gap
+      const translateX = -(currentVideoIndex * (100 / videosVisible));
+      videoTrack.style.transform = `translateX(${translateX}%)`;
+      
+      // Update button states
+      scrollLeftBtn.style.opacity = currentVideoIndex > 0 ? '1' : '0.5';
+      scrollRightBtn.style.opacity = currentVideoIndex < maxIndex ? '1' : '0.5';
+    }
+    
+    scrollLeftBtn.addEventListener('click', function() {
+      if (currentVideoIndex > 0) {
+        currentVideoIndex--;
+        updateVideoCarousel();
+      }
+    });
+    
+    scrollRightBtn.addEventListener('click', function() {
+      if (currentVideoIndex < maxIndex) {
+        currentVideoIndex++;
+        updateVideoCarousel();
+      }
+    });
+    
+    // Initialize
+    updateVideoCarousel();
   }
 
   // ── Contact Form ──

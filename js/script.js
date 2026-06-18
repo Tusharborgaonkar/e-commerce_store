@@ -1,25 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-  // ── Auto-hide Complete Header on Scroll ──
+  
+  // ── Smart Header Scroll ──
   let lastScrollTop = 0;
   const headerContainer = document.getElementById('header-container');
+  const marqueeBar = document.getElementById('marquee-bar');
+  const headerSpacer = document.getElementById('header-spacer');
+  
+  function updateSpacer() {
+    if (headerContainer && headerSpacer) {
+      headerSpacer.style.height = headerContainer.offsetHeight + 'px';
+    }
+  }
+  
+  // Wait a tick for styles to compute
+  setTimeout(updateSpacer, 50);
+  window.addEventListener('resize', updateSpacer);
   
   window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-      // Scrolling down & past 100px - hide entire header container
+    if (scrollTop > lastScrollTop && scrollTop > 50) {
+      // Scrolling down -> hide completely
       if (headerContainer) {
         headerContainer.style.transform = 'translateY(-100%)';
       }
     } else if (scrollTop < lastScrollTop) {
-      // Scrolling up - show entire header container
+      // Scrolling up -> show only main header (hide marquee)
       if (headerContainer) {
-        headerContainer.style.transform = 'translateY(0)';
+        if (scrollTop <= 50) {
+           headerContainer.style.transform = 'translateY(0)';
+        } else {
+           const marqueeHeight = marqueeBar ? marqueeBar.offsetHeight : 0;
+           headerContainer.style.transform = `translateY(-${marqueeHeight}px)`;
+        }
       }
     }
     
-    // When user reaches the very top, always show header
     if (scrollTop <= 0) {
       if (headerContainer) {
         headerContainer.style.transform = 'translateY(0)';

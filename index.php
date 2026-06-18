@@ -3,6 +3,7 @@
 <!-- ═══════════════════════════════════════
      HERO SLIDESHOW
 ═══════════════════════════════════════ -->
+
 <section class="relative overflow-hidden bg-gray-100 select-none">
   <div id="hero-slider" class="relative">
 

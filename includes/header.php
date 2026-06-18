@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HOME'WERA – Modern Home Decor Store | Stylish & Affordable</title>
+  <title>PRISMICA – Modern Home Decor Store | Stylish & Affordable</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -107,7 +107,7 @@
         <a href="index.php" class="flex flex-col items-center leading-none select-none">
           <span class="text-[2rem] md:text-[2.2rem] font-bold tracking-[0.08em] text-gray-900"
                 style="font-family:'Poppins',sans-serif;">
-            HOME<span class="text-gray-900">'</span>WERA
+            PRISMICA
             <sup class="text-[12px] font-normal align-super">™</sup>
           </span>
           <span class="text-[10px] md:text-[11px] tracking-[0.22em] text-gray-400 font-medium uppercase mt-0.5">
@@ -151,20 +151,20 @@
           <?php
           $current = basename($_SERVER['PHP_SELF']);
           $navItems = [
-            'index.php'       => 'Home',
-            'catalog.php'     => 'Catalog',
-            'contact.php'     => 'Contact',
-            'track-order.php' => 'Track order',
+            'index.php'       => ['label' => 'Home', 'href' => 'index.php'],
+            'catalog.php'     => ['label' => 'Catalog', 'href' => 'javascript:void(0)'],
+            'contact.php'     => ['label' => 'Contact', 'href' => 'javascript:void(0)'],
+            'track-order.php' => ['label' => 'Track order', 'href' => 'javascript:void(0)'],
           ];
-          foreach ($navItems as $file => $label):
+          foreach ($navItems as $file => $item):
             $isActive = ($current === $file);
           ?>
-            <a href="<?php echo $file; ?>"
+            <a href="<?php echo $item['href']; ?>"
                class="<?php echo $isActive
                  ? 'bg-[#552c1c] text-white'
                  : 'text-gray-700 hover:text-[#552c1c]'; ?>
                       px-6 py-2.5 rounded-lg text-[15px] font-medium transition-colors duration-200">
-              <?php echo $label; ?>
+              <?php echo $item['label']; ?>
             </a>
           <?php endforeach; ?>
         </nav>
@@ -174,13 +174,13 @@
     <!-- ── Mobile Menu ── -->
     <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 px-4 pb-4">
       <nav class="flex flex-col pt-3 text-sm font-medium text-gray-700">
-        <?php foreach ($navItems as $file => $label):
+        <?php foreach ($navItems as $file => $item):
           $isActive = ($current === $file);
         ?>
-          <a href="<?php echo $file; ?>"
+          <a href="<?php echo $item['href']; ?>"
              class="<?php echo $isActive ? 'text-[#552c1c] font-semibold' : 'hover:text-[#552c1c]'; ?>
                     py-3 border-b border-gray-100 transition-colors">
-            <?php echo $label; ?>
+            <?php echo $item['label']; ?>
           </a>
         <?php endforeach; ?>
       </nav>

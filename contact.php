@@ -41,9 +41,9 @@
             <div class="contact-info-wrapper">
                 <h2>Get in Touch</h2>
                 <ul class="contact-details">
-                    <li><i class="fas fa-map-marker-alt"></i> 123, HomeWera Lane, New Delhi, India</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123, Prismica Lane, New Delhi, India</li>
                     <li><i class="fas fa-phone"></i> +91 92271 30063</li>
-                    <li><i class="fas fa-envelope"></i> support@homewera.com</li>
+                    <li><i class="fas fa-envelope"></i> support@prismica.com</li>
                     <li><i class="fas fa-clock"></i> Mon–Sat: 10:00 AM – 7:00 PM</li>
                 </ul>
                 <div class="map-placeholder">

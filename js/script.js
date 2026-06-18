@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-  
+
   // ── Smart Header Scroll ──
   let lastScrollTop = 0;
   const headerContainer = document.getElementById('header-container');
   const marqueeBar = document.getElementById('marquee-bar');
   const headerSpacer = document.getElementById('header-spacer');
-  
+
   function updateSpacer() {
     if (headerContainer && headerSpacer) {
       headerSpacer.style.height = headerContainer.offsetHeight + 'px';
     }
   }
-  
+
   // Wait a tick for styles to compute
   setTimeout(updateSpacer, 50);
   window.addEventListener('resize', updateSpacer);
-  
-  window.addEventListener('scroll', function() {
+
+  window.addEventListener('scroll', function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     if (scrollTop > lastScrollTop && scrollTop > 50) {
       // Scrolling down -> hide completely
       if (headerContainer) {
@@ -28,20 +28,20 @@ document.addEventListener('DOMContentLoaded', function () {
       // Scrolling up -> show only main header (hide marquee)
       if (headerContainer) {
         if (scrollTop <= 50) {
-           headerContainer.style.transform = 'translateY(0)';
+          headerContainer.style.transform = 'translateY(0)';
         } else {
-           const marqueeHeight = marqueeBar ? marqueeBar.offsetHeight : 0;
-           headerContainer.style.transform = `translateY(-${marqueeHeight}px)`;
+          const marqueeHeight = marqueeBar ? marqueeBar.offsetHeight : 0;
+          headerContainer.style.transform = `translateY(-${marqueeHeight}px)`;
         }
       }
     }
-    
+
     if (scrollTop <= 0) {
       if (headerContainer) {
         headerContainer.style.transform = 'translateY(0)';
       }
     }
-    
+
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 
@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── Search Modal ──
   const searchToggle = document.getElementById('search-toggle');
-  const searchModal  = document.getElementById('search-modal');
-  const searchClose  = document.getElementById('search-close');
-  const searchInput  = document.getElementById('search-input');
+  const searchModal = document.getElementById('search-modal');
+  const searchClose = document.getElementById('search-close');
+  const searchInput = document.getElementById('search-input');
 
   if (searchToggle && searchModal) {
     searchToggle.addEventListener('click', function () {
@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ── Cart Drawer ──
-  const cartToggle  = document.getElementById('cart-toggle');
-  const cartClose   = document.getElementById('cart-close');
-  const cartDrawer  = document.getElementById('cart-drawer');
+  const cartToggle = document.getElementById('cart-toggle');
+  const cartClose = document.getElementById('cart-close');
+  const cartDrawer = document.getElementById('cart-drawer');
   const cartOverlay = document.getElementById('cart-overlay');
 
   function openCart() {
@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
 
-  if (cartToggle)  cartToggle.addEventListener('click', openCart);
-  if (cartClose)   cartClose.addEventListener('click', closeCart);
+  if (cartToggle) cartToggle.addEventListener('click', openCart);
+  if (cartClose) cartClose.addEventListener('click', closeCart);
   if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
 
   // ── Cart State ──
@@ -125,11 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function renderCart() {
-    const cartList      = document.getElementById('cart-list');
-    const cartEmpty     = document.getElementById('cart-empty');
-    const cartCount     = document.getElementById('cart-count');
+    const cartList = document.getElementById('cart-list');
+    const cartEmpty = document.getElementById('cart-empty');
+    const cartCount = document.getElementById('cart-count');
     const cartItemCount = document.getElementById('cart-item-count');
-    const cartTotal     = document.getElementById('cart-total');
+    const cartTotal = document.getElementById('cart-total');
 
     const totalQty = cartItems.reduce((s, i) => s + i.qty, 0);
     const totalAmt = cartItems.reduce((s, i) => {
@@ -137,9 +137,9 @@ document.addEventListener('DOMContentLoaded', function () {
       return s + num * i.qty;
     }, 0);
 
-    if (cartCount)     cartCount.textContent     = totalQty;
-    if (cartItemCount) cartItemCount.textContent  = '• ' + totalQty + ' item' + (totalQty !== 1 ? 's' : '');
-    if (cartTotal)     cartTotal.textContent      = '₹' + totalAmt.toLocaleString('en-IN', { minimumFractionDigits: 2 });
+    if (cartCount) cartCount.textContent = totalQty;
+    if (cartItemCount) cartItemCount.textContent = '• ' + totalQty + ' item' + (totalQty !== 1 ? 's' : '');
+    if (cartTotal) cartTotal.textContent = '₹' + totalAmt.toLocaleString('en-IN', { minimumFractionDigits: 2 });
 
     if (!cartList || !cartEmpty) return;
 
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── Toast Notification ──
   function showToast(msg) {
-    const toast    = document.getElementById('toast');
+    const toast = document.getElementById('toast');
     const toastMsg = document.getElementById('toast-msg');
     if (!toast) return;
     if (toastMsg) toastMsg.textContent = msg;
@@ -207,14 +207,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // ── Hero Slider ──
   let currentSlide = 0;
   const slides = document.querySelectorAll('.hero-slide');
-  const dots   = document.querySelectorAll('.hero-dot');
+  const dots = document.querySelectorAll('.hero-dot');
 
   function updateSlider() {
     slides.forEach((s, i) => {
       s.classList.toggle('active', i === currentSlide);
     });
     dots.forEach((d, i) => {
-      d.style.opacity  = i === currentSlide ? '1' : '0.5';
+      d.style.opacity = i === currentSlide ? '1' : '0.5';
       d.style.transform = i === currentSlide ? 'scale(1.4)' : 'scale(1)';
     });
   }
@@ -263,36 +263,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const videoTrack = document.getElementById('video-track');
   const scrollLeftBtn = document.getElementById('scroll-left');
   const scrollRightBtn = document.getElementById('scroll-right');
-  
+
   if (scrollLeftBtn && scrollRightBtn && videoTrack) {
     const totalVideos = videoTrack.children.length;
     const videosVisible = 3; // Always show 3 videos
     const maxIndex = totalVideos - videosVisible;
-    
+
     function updateVideoCarousel() {
       // Each video takes 1/3 of container width + gap
       const translateX = -(currentVideoIndex * (100 / videosVisible));
       videoTrack.style.transform = `translateX(${translateX}%)`;
-      
+
       // Update button states
       scrollLeftBtn.style.opacity = currentVideoIndex > 0 ? '1' : '0.5';
       scrollRightBtn.style.opacity = currentVideoIndex < maxIndex ? '1' : '0.5';
     }
-    
-    scrollLeftBtn.addEventListener('click', function() {
+
+    scrollLeftBtn.addEventListener('click', function () {
       if (currentVideoIndex > 0) {
         currentVideoIndex--;
         updateVideoCarousel();
       }
     });
-    
-    scrollRightBtn.addEventListener('click', function() {
+
+    scrollRightBtn.addEventListener('click', function () {
       if (currentVideoIndex < maxIndex) {
         currentVideoIndex++;
         updateVideoCarousel();
       }
     });
-    
+
     // Initialize
     updateVideoCarousel();
   }
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ── Track Order Form ──
-  const trackForm   = document.querySelector('.track-form');
+  const trackForm = document.querySelector('.track-form');
   const trackResult = document.getElementById('track-result');
   if (trackForm && trackResult) {
     trackForm.addEventListener('submit', function (e) {

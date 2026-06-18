@@ -81,7 +81,7 @@
     <!-- Section Title -->
     <div class="text-center mb-8">
       <h2 class="text-2xl md:text-[1.85rem] font-bold text-gray-900 tracking-tight">Our Top Categories</h2>
-      <p class="text-gray-500 text-sm italic mt-1">Transform Your Home with Home'wera</p>
+      <p class="text-gray-500 text-sm italic mt-1">Transform Your Home with Prismica</p>
     </div>
 
     <!-- 3-column grid matching screenshot -->
@@ -94,7 +94,7 @@
           'compare'  => 'Rs. 1,749.00',
           'discount' => '34',
           'img'      => 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&q=80',
-          'href'     => 'catalog.php',
+          'href'     => 'javascript:void(0)',
         ],
         [
           'name'     => 'Sprouts Maker Glass Jar | Hygienic Glass – 720mls 🌱',
@@ -102,7 +102,7 @@
           'compare'  => 'Rs. 999.00',
           'discount' => '30',
           'img'      => 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=600&q=80',
-          'href'     => 'catalog.php',
+          'href'     => 'javascript:void(0)',
         ],
         [
           'name'     => 'Premium Borosilicate Glass Spice Jar with Bamboo Lid - 270 ml 🫙',
@@ -110,7 +110,7 @@
           'compare'  => 'Rs. 1,699.00',
           'discount' => '23',
           'img'      => 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80',
-          'href'     => 'catalog.php',
+          'href'     => 'javascript:void(0)',
         ],
         [
           'name'     => 'Food Grade Silicone Idli Liners (Eco-Friendly) ☘️',
@@ -118,7 +118,7 @@
           'compare'  => 'Rs. 999.00',
           'discount' => '40',
           'img'      => 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80',
-          'href'     => 'catalog.php',
+          'href'     => 'javascript:void(0)',
         ],
         [
           'name'     => 'Stainless Steel Matka Stand With Dispenser Tray',
@@ -126,7 +126,7 @@
           'compare'  => 'Rs. 1,999.00',
           'discount' => '55',
           'img'      => 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=600&q=80',
-          'href'     => 'catalog.php',
+          'href'     => 'javascript:void(0)',
         ],
         [
           'name'     => 'Sun Protection Mask ☀️',
@@ -134,7 +134,7 @@
           'compare'  => 'Rs. 799.00',
           'discount' => '50',
           'img'      => 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=600&q=80',
-          'href'     => 'catalog.php',
+          'href'     => 'javascript:void(0)',
         ],
       ];
       foreach ($products as $p):
@@ -188,7 +188,7 @@
 
     <!-- View all button -->
     <div class="text-center mt-10">
-      <a href="catalog.php"
+      <a href="javascript:void(0)"
         class="inline-block bg-[#552c1c] text-white font-semibold text-sm
                px-8 py-3 rounded-xl hover:bg-[#6b3622] transition-colors">
         View all
@@ -204,7 +204,7 @@
 <section class="bg-white py-12 border-y border-gray-100">
   <div class="max-w-7xl mx-auto px-4 lg:px-10">
     <h2 class="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-10">
-      The HOME<span class="text-[#6d388b]">'</span>WERA Assurance
+      The PRISMICA Assurance
     </h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <?php
@@ -359,7 +359,7 @@
 
       <!-- Brand line exactly as in screenshot -->
       <p class="text-[11px] font-semibold tracking-[0.18em] text-gray-400 uppercase mb-4 flex items-center gap-2">
-        <span>HOME'WERA</span>
+        <span>PRISMICA</span>
         <span class="text-[9px] font-normal normal-case">THE TRUSTED HUB</span>
       </p>
 
@@ -422,9 +422,9 @@
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
       <?php
       $collections = [
-        ['title' => 'Home & kitchen Essentials', 'img' => 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80', 'href' => 'catalog.php?cat=kitchen'],
-        ['title' => 'Home Decor',                'img' => 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80', 'href' => 'catalog.php?cat=decor'],
-        ['title' => 'Women Essentials',          'img' => 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80', 'href' => 'catalog.php?cat=women'],
+        ['title' => 'Home & kitchen Essentials', 'img' => 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80', 'href' => 'javascript:void(0)'],
+        ['title' => 'Home Decor',                'img' => 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80', 'href' => 'javascript:void(0)'],
+        ['title' => 'Women Essentials',          'img' => 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80', 'href' => 'javascript:void(0)'],
       ];
       foreach ($collections as $c):
       ?>
@@ -462,7 +462,7 @@
     <div class="text-center">
       <img 
         src="assets/images/milestones.png" 
-        alt="HOME'WERA Milestones" 
+        alt="PRISMICA Milestones" 
         class="w-full h-auto"
       />
     </div>

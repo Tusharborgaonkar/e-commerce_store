@@ -151,15 +151,16 @@
           <?php
           $current = basename($_SERVER['PHP_SELF']);
           $navItems = [
-            'index.php'       => ['label' => 'Home', 'href' => 'index.php'],
-            'catalog.php'     => ['label' => 'Catalog', 'href' => 'javascript:void(0)'],
-            'contact.php'     => ['label' => 'Contact', 'href' => 'javascript:void(0)'],
-            'track-order.php' => ['label' => 'Track order', 'href' => 'javascript:void(0)'],
+            'index.php'       => ['label' => 'Home',        'href' => 'index.php'],
+            'catalog.php'     => ['label' => 'Catalog',     'href' => 'catalog.php'],
+            'contact.php'     => ['label' => 'Contact',     'href' => 'contact.php'],
+            'track-order.php' => ['label' => 'Track order', 'href' => 'https://www.shiprocket.in/shipment-tracking/', 'external' => true],
           ];
           foreach ($navItems as $file => $item):
             $isActive = ($current === $file);
           ?>
             <a href="<?php echo $item['href']; ?>"
+               <?php if (!empty($item['external'])) echo 'target="_blank" rel="noopener"'; ?>
                class="<?php echo $isActive
                  ? 'bg-[#552c1c] text-white'
                  : 'text-gray-700 hover:text-[#552c1c]'; ?>
@@ -178,6 +179,7 @@
           $isActive = ($current === $file);
         ?>
           <a href="<?php echo $item['href']; ?>"
+             <?php if (!empty($item['external'])) echo 'target="_blank" rel="noopener"'; ?>
              class="<?php echo $isActive ? 'text-[#552c1c] font-semibold' : 'hover:text-[#552c1c]'; ?>
                     py-3 border-b border-gray-100 transition-colors">
             <?php echo $item['label']; ?>

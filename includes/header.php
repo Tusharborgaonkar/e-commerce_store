@@ -217,23 +217,122 @@
 <!-- ════════════════════════════════════════
      CART DRAWER
 ════════════════════════════════════════ -->
+<style>
+  /* Cart timer bar */
+  .cart-timer-bar {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 9px 16px;
+    letter-spacing: 0.02em;
+  }
+  /* Cart item qty box */
+  .cart-qty-box {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid #d0d0d0;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 32px;
+    margin-top: 6px;
+  }
+  .cart-qty-btn {
+    width: 32px; height: 32px;
+    border: none;
+    background: #f5f5f5;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    flex-shrink: 0;
+  }
+  .cart-qty-btn:hover { background: #ebebeb; }
+  .cart-qty-num {
+    width: 36px; height: 32px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #121212;
+    border-left: 1.5px solid #d0d0d0;
+    border-right: 1.5px solid #d0d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  /* Savings row */
+  .cart-savings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 6px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .cart-savings-label { font-size: 0.85rem; font-weight: 600; color: #121212; }
+  .cart-savings-amt   { font-size: 0.85rem; font-weight: 700; color: #2d7a3c; }
+  /* Subtotal row */
+  .cart-subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0 14px;
+  }
+  .cart-subtotal-label { font-size: 1rem; font-weight: 700; color: #121212; }
+  .cart-subtotal-amt   { font-size: 1rem; font-weight: 700; color: #121212; }
+  /* Payment icons */
+  .cart-pay-icons {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .cart-pay-icon {
+    height: 26px;
+    padding: 3px 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+</style>
+
 <div id="cart-overlay" class="fixed inset-0 z-[70] bg-black/40 hidden"></div>
 
 <div id="cart-drawer"
-  class="cart-drawer fixed top-0 right-0 z-[80] w-full max-w-sm h-full bg-white shadow-2xl flex flex-col">
+  class="cart-drawer fixed top-0 right-0 z-[80] w-full max-w-[380px] h-full bg-white shadow-2xl flex flex-col">
 
   <!-- Header -->
-  <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-    <h2 class="text-base font-semibold text-gray-800">
-      Cart &nbsp;<span id="cart-item-count" class="text-sm text-gray-400 font-normal">• 0 items</span>
+  <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+    <h2 class="text-xl font-bold text-gray-900">
+      Cart &nbsp;<span id="cart-item-count" class="text-xl font-bold">• 0 items</span>
     </h2>
-    <button id="cart-close" class="text-gray-400 hover:text-gray-700 text-xl focus:outline-none">
-      <i class="fas fa-times"></i>
+    <button id="cart-close" class="text-gray-500 hover:text-gray-800 text-2xl focus:outline-none leading-none">
+      &times;
     </button>
   </div>
 
+  <!-- Timer bar -->
+  <div class="cart-timer-bar">
+    Cart reserved for <span id="cart-timer">05:00</span>
+  </div>
+
   <!-- Items -->
-  <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-4">
+  <div class="flex-1 overflow-y-auto px-5 py-4">
+    <!-- Empty state -->
     <div id="cart-empty" class="flex flex-col items-center justify-center h-full text-center gap-4 text-gray-400">
       <i class="fas fa-shopping-bag text-5xl"></i>
       <p class="font-medium text-sm">Your cart is empty</p>
@@ -242,19 +341,43 @@
         Continue Shopping
       </a>
     </div>
-    <div id="cart-list" class="hidden space-y-4"></div>
+    <!-- Cart items list -->
+    <div id="cart-list" class="hidden"></div>
   </div>
 
   <!-- Footer -->
-  <div class="px-6 py-4 border-t border-gray-100">
-    <div class="flex justify-between text-sm font-semibold mb-3">
-      <span>Subtotal</span>
-      <span id="cart-total">₹0.00</span>
+  <div class="px-5 pb-5 border-t border-gray-100 pt-3">
+    <!-- Savings -->
+    <div class="cart-savings-row">
+      <span class="cart-savings-label">Savings</span>
+      <span class="cart-savings-amt" id="cart-savings">-Rs. 0.00</span>
     </div>
-    <button
-      class="w-full bg-[#552c1c] text-white py-3 rounded-xl font-semibold hover:bg-[#6b3622] transition-colors text-sm">
-      Check out
+    <!-- Subtotal -->
+    <div class="cart-subtotal-row">
+      <span class="cart-subtotal-label">Subtotal</span>
+      <span class="cart-subtotal-amt" id="cart-total">Rs. 0.00</span>
+    </div>
+    <!-- Checkout btn -->
+    <button class="w-full bg-[#552c1c] text-white py-4 rounded-xl font-bold hover:bg-[#6b3622] transition-colors text-[0.95rem] mb-1">
+      Checkout
+      <span class="block text-[0.72rem] font-normal opacity-80 mt-0.5">10% Off on prepaid orders</span>
     </button>
+    <!-- Payment icons -->
+    <div class="cart-pay-icons">
+      <div class="cart-pay-icon" style="color:#097939;">UPI</div>
+      <div class="cart-pay-icon" style="color:#00b9f1;">Paytm</div>
+      <div class="cart-pay-icon">
+        <span style="color:#4285F4;font-size:0.6rem;font-weight:900;">G</span>
+        <span style="color:#EA4335;font-size:0.6rem;font-weight:900;">o</span>
+        <span style="color:#FBBC04;font-size:0.6rem;font-weight:900;">o</span>
+        <span style="color:#4285F4;font-size:0.6rem;font-weight:900;">g</span>
+        <span style="color:#34A853;font-size:0.6rem;font-weight:900;">l</span>
+        <span style="color:#EA4335;font-size:0.6rem;font-weight:900;">e</span>
+        <span style="margin-left:2px;font-size:0.6rem;font-weight:800;">Pay</span>
+      </div>
+      <div class="cart-pay-icon" style="background:#1a1f71;color:#fff;border-color:#1a1f71;font-size:0.7rem;">VISA</div>
+      <div class="cart-pay-icon" style="font-size:0.6rem;font-weight:800;">Apple Pay</div>
+    </div>
   </div>
 
 </div>

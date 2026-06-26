@@ -921,16 +921,22 @@ function pdpToggleFaq(i) {
 
 /* ── Add to Cart ── */
 function pdpAddToCart(btn) {
-  var qty = parseInt(document.getElementById('pdp-qty').value) || 1;
-  var el = document.getElementById('cart-count');
-  if (el) el.textContent = (parseInt(el.textContent) || 0) + qty;
+  var name    = <?= json_encode($product['name']) ?>;
+  var img     = document.getElementById('pdp-main-img').src;
+  var qty     = parseInt(document.getElementById('pdp-qty').value) || 1;
+  var selBtn  = document.querySelector('.pdp-variant-btn.selected');
+  var variant = selBtn ? selBtn.textContent.trim() : '';
+  var price   = pdpCurrentPrice;
+  var compare = parseInt(document.getElementById('pdp-price-compare').textContent.replace(/[^0-9]/g,'')) || price;
+
+  if (typeof addToCart === 'function') {
+    addToCart(name, price, compare, img, variant, qty);
+  }
+
   var orig = btn.textContent;
   btn.textContent = '✓ Added to Cart!';
   btn.style.cssText = 'background:#2d7a3c;color:#fff;border-color:#2d7a3c;';
-  setTimeout(function() {
-    btn.textContent = orig;
-    btn.style.cssText = '';
-  }, 1800);
+  setTimeout(function() { btn.textContent = orig; btn.style.cssText = ''; }, 1800);
 }
 
 /* ── Buy Now ── */

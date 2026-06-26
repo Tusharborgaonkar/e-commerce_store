@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ── Cart Drawer ──
-  const cartToggle = document.getElementById('cart-toggle');
-  const cartClose = document.getElementById('cart-close');
-  const cartDrawer = document.getElementById('cart-drawer');
+  const cartToggle  = document.getElementById('cart-toggle');
+  const cartClose   = document.getElementById('cart-close');
+  const cartDrawer  = document.getElementById('cart-drawer');
   const cartOverlay = document.getElementById('cart-overlay');
 
   function openCart() {
@@ -105,41 +105,64 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
 
-  if (cartToggle) cartToggle.addEventListener('click', openCart);
-  if (cartClose) cartClose.addEventListener('click', closeCart);
+  if (cartToggle)  cartToggle.addEventListener('click', openCart);
+  if (cartClose)   cartClose.addEventListener('click', closeCart);
   if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+
+  // ── Cart Timer (5 min countdown) ──
+  let timerSeconds = 300;
+  let timerInterval = null;
+
+  function startTimer() {
+    if (timerInterval) return;
+    timerInterval = setInterval(function () {
+      timerSeconds = Math.max(0, timerSeconds - 1);
+      const m = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+      const s = String(timerSeconds % 60).padStart(2, '0');
+      const el = document.getElementById('cart-timer');
+      if (el) el.textContent = m + ':' + s;
+      if (timerSeconds === 0) { clearInterval(timerInterval); timerInterval = null; timerSeconds = 300; }
+    }, 1000);
+  }
 
   // ── Cart State ──
   let cartItems = [];
 
-  window.addToCart = function (name, price, img) {
-    const existing = cartItems.find(i => i.name === name);
+  // Global addToCart — called from product & catalog pages
+  window.addToCart = function (name, price, comparePrice, img, variant, qty) {
+    qty = parseInt(qty) || 1;
+    const priceNum   = parseFloat(String(price).replace(/[^\d.]/g, ''))   || 0;
+    const compareNum = parseFloat(String(comparePrice).replace(/[^\d.]/g, '')) || priceNum;
+    const key = name + '||' + (variant || '');
+    const existing = cartItems.find(i => i.key === key);
     if (existing) {
-      existing.qty++;
+      existing.qty += qty;
     } else {
-      cartItems.push({ name, price, img, qty: 1 });
+      cartItems.push({ key, name, price: priceNum, compare: compareNum, img, variant: variant || '', qty });
     }
     renderCart();
     openCart();
+    startTimer();
     showToast(name + ' added to cart!');
   };
 
   function renderCart() {
-    const cartList = document.getElementById('cart-list');
-    const cartEmpty = document.getElementById('cart-empty');
-    const cartCount = document.getElementById('cart-count');
+    const cartList    = document.getElementById('cart-list');
+    const cartEmpty   = document.getElementById('cart-empty');
+    const cartCount   = document.getElementById('cart-count');
     const cartItemCount = document.getElementById('cart-item-count');
-    const cartTotal = document.getElementById('cart-total');
+    const cartTotal   = document.getElementById('cart-total');
+    const cartSavings = document.getElementById('cart-savings');
 
-    const totalQty = cartItems.reduce((s, i) => s + i.qty, 0);
-    const totalAmt = cartItems.reduce((s, i) => {
-      const num = parseFloat(i.price.replace(/[^\d.]/g, '')) || 0;
-      return s + num * i.qty;
-    }, 0);
+    const totalQty  = cartItems.reduce((s, i) => s + i.qty, 0);
+    const totalAmt  = cartItems.reduce((s, i) => s + i.price   * i.qty, 0);
+    const totalComp = cartItems.reduce((s, i) => s + i.compare * i.qty, 0);
+    const savings   = totalComp - totalAmt;
 
-    if (cartCount) cartCount.textContent = totalQty;
-    if (cartItemCount) cartItemCount.textContent = '• ' + totalQty + ' item' + (totalQty !== 1 ? 's' : '');
-    if (cartTotal) cartTotal.textContent = '₹' + totalAmt.toLocaleString('en-IN', { minimumFractionDigits: 2 });
+    if (cartCount)     cartCount.textContent     = totalQty;
+    if (cartItemCount) cartItemCount.textContent = '\u2022 ' + totalQty + ' item' + (totalQty !== 1 ? 's' : '');
+    if (cartTotal)     cartTotal.textContent     = 'Rs. ' + totalAmt.toLocaleString('en-IN', { minimumFractionDigits: 2 });
+    if (cartSavings)   cartSavings.textContent   = '-Rs. ' + savings.toLocaleString('en-IN', { minimumFractionDigits: 2 });
 
     if (!cartList || !cartEmpty) return;
 
@@ -152,36 +175,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     cartEmpty.classList.add('hidden');
     cartList.classList.remove('hidden');
-    cartList.innerHTML = cartItems.map((item, idx) => `
-      <div class="flex items-center gap-3 py-3 border-b border-gray-100 last:border-0">
+
+    cartList.innerHTML = cartItems.map((item, idx) => {
+      const lineTotal   = item.price   * item.qty;
+      const lineCompare = item.compare * item.qty;
+      const lineSaving  = lineCompare - lineTotal;
+      return `
+      <div style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f0f0f0;align-items:flex-start;">
+        <!-- Image -->
         <img src="${item.img}" alt="${item.name}"
-          class="w-16 h-16 rounded-xl object-cover shrink-0 border border-gray-100" />
-        <div class="flex-1 min-w-0">
-          <p class="text-xs font-semibold text-gray-800 leading-tight line-clamp-2">${item.name}</p>
-          <p class="text-[#552c1c] font-bold text-sm mt-1">${item.price}</p>
-          <div class="flex items-center gap-2 mt-1">
-            <button onclick="changeQty(${idx}, -1)"
-              class="w-6 h-6 rounded-full border border-gray-300 text-gray-600 hover:border-[#552c1c] hover:text-[#552c1c] flex items-center justify-center text-xs transition-colors">
-              <i class="fas fa-minus"></i>
-            </button>
-            <span class="text-xs font-semibold w-4 text-center">${item.qty}</span>
-            <button onclick="changeQty(${idx}, 1)"
-              class="w-6 h-6 rounded-full border border-gray-300 text-gray-600 hover:border-[#552c1c] hover:text-[#552c1c] flex items-center justify-center text-xs transition-colors">
-              <i class="fas fa-plus"></i>
+          style="width:80px;height:80px;border-radius:10px;object-fit:cover;flex-shrink:0;border:1px solid #eee;" />
+
+        <!-- Info -->
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;">
+            <p style="font-size:0.88rem;font-weight:700;color:#121212;line-height:1.4;margin:0;">${item.name}</p>
+            <button onclick="removeFromCart(${idx})"
+              style="flex-shrink:0;background:none;border:none;cursor:pointer;color:#bbb;font-size:1rem;padding:0;line-height:1;"
+              title="Remove">
+              <i class="fas fa-trash-alt" style="pointer-events:none;"></i>
             </button>
           </div>
+          ${item.variant ? `<p style="font-size:0.75rem;color:#777;margin:3px 0 0;">${item.variant}</p>` : ''}
+
+          <!-- Price row -->
+          <div style="display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap;">
+            <span style="font-size:0.78rem;color:#999;text-decoration:line-through;">Rs. ${item.compare.toLocaleString('en-IN')}.00</span>
+            <span style="font-size:0.9rem;font-weight:800;color:#121212;">Rs. ${lineTotal.toLocaleString('en-IN')}.00</span>
+          </div>
+          <div style="font-size:0.75rem;font-weight:600;color:#2d7a3c;margin-top:1px;">(You save Rs. ${lineSaving.toLocaleString('en-IN')})</div>
+
+          <!-- Qty controls -->
+          <div class="cart-qty-box">
+            <button class="cart-qty-btn" onclick="cartChangeQty(${idx}, -1)">−</button>
+            <div class="cart-qty-num">${item.qty}</div>
+            <button class="cart-qty-btn" onclick="cartChangeQty(${idx}, 1)">+</button>
+          </div>
         </div>
-        <button onclick="removeFromCart(${idx})"
-          class="text-gray-300 hover:text-red-400 transition-colors shrink-0 ml-1 text-sm">
-          <i class="fas fa-trash-alt"></i>
-        </button>
-      </div>
-    `).join('');
+      </div>`;
+    }).join('');
   }
 
-  window.changeQty = function (idx, delta) {
-    cartItems[idx].qty += delta;
-    if (cartItems[idx].qty <= 0) cartItems.splice(idx, 1);
+  window.cartChangeQty = function (idx, delta) {
+    cartItems[idx].qty = Math.max(1, cartItems[idx].qty + delta);
     renderCart();
   };
 

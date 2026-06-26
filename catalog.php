@@ -524,9 +524,17 @@
 
 <?php
 // ── Product data ──────────────────────────────────────────────────────────
+function catalog_slug(string $name): string {
+  $s = mb_strtolower($name, 'UTF-8');
+  $s = preg_replace('/[^a-z0-9\s-]/u', '', $s);
+  $s = trim(preg_replace('/[\s-]+/', '-', $s), '-');
+  return $s;
+}
+
 $products = [
   [
     'name'      => 'Air -Tight Kitchen Storage / Containers',
+    'slug'      => 'air-tight-kitchen-storage-containers',
     'price'     => 1299,
     'original'  => 3999,
     'category'  => 'kitchen',
@@ -797,9 +805,11 @@ $totalProducts = count($products);
 
 foreach ($products as $idx => $p):
   $off = discount($p['price'], $p['original']);
+  $slug = !empty($p['slug']) ? $p['slug'] : catalog_slug($p['name']);
+  $product_url = 'product.php?slug=' . urlencode($slug);
 ?>
       <!-- ── Card ── -->
-      <div class="product-card" data-category="<?= $p['category'] ?>" data-price="<?= $p['price'] ?>" data-name="<?= htmlspecialchars($p['name']) ?>" style="animation-delay: <?= $idx * 0.04 ?>s;">
+      <div class="product-card" data-category="<?= $p['category'] ?>" data-price="<?= $p['price'] ?>" data-name="<?= htmlspecialchars($p['name']) ?>" style="cursor:pointer;animation-delay: <?= $idx * 0.04 ?>s;" onclick="window.location.href='<?= $product_url ?>'" role="link">
 
         <!-- Image area -->
         <div class="card-image-wrap">
@@ -829,7 +839,7 @@ foreach ($products as $idx => $p):
 
         <!-- Info -->
         <div class="card-info">
-          <h3><a href="javascript:void(0)"><?= htmlspecialchars($p['name']) ?></a></h3>
+          <h3><a href="<?= $product_url ?>"><?= htmlspecialchars($p['name']) ?></a></h3>
 
           <div class="card-stars">
             <?= stars_html($p['stars']) ?>
@@ -841,7 +851,7 @@ foreach ($products as $idx => $p):
             <span class="price-original">Rs. <?= number_format($p['original']) ?>.00</span>
           </div>
 
-          <button class="btn-choose" type="button"><span>Choose options</span></button>
+          <button class="btn-choose" type="button" onclick="event.stopPropagation(); window.location.href='<?= $product_url ?>'"><span>Choose options</span></button>
         </div>
 
       </div>

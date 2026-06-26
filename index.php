@@ -94,7 +94,7 @@
           'compare'  => 'Rs. 1,749.00',
           'discount' => '34',
           'img'      => 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&q=80',
-          'href'     => 'javascript:void(0)',
+          'href'     => 'product.php?slug=air-tight-kitchen-storage-containers',
         ],
         [
           'name'     => 'Sprouts Maker Glass Jar | Hygienic Glass – 720mls 🌱',
@@ -102,15 +102,15 @@
           'compare'  => 'Rs. 999.00',
           'discount' => '30',
           'img'      => 'https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=600&q=80',
-          'href'     => 'javascript:void(0)',
+          'href'     => 'product.php?slug=sprouts-maker-glass-jar',
         ],
         [
-          'name'     => 'Premium Borosilicate Glass Spice Jar with Bamboo Lid - 270 ml 🫙',
+          'name'     => 'Premium Borosilicate Glass Spice Jar with Bamboo Lid – 270 ml 🫙',
           'price'    => 'Rs. 1,299.00',
           'compare'  => 'Rs. 1,699.00',
           'discount' => '23',
           'img'      => 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80',
-          'href'     => 'javascript:void(0)',
+          'href'     => 'product.php?slug=premium-borosilicate-glass-spice-jar',
         ],
         [
           'name'     => 'Food Grade Silicone Idli Liners (Eco-Friendly) ☘️',
@@ -118,7 +118,7 @@
           'compare'  => 'Rs. 999.00',
           'discount' => '40',
           'img'      => 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=80',
-          'href'     => 'javascript:void(0)',
+          'href'     => 'product.php?slug=food-grade-silicone-idli-liners',
         ],
         [
           'name'     => 'Stainless Steel Matka Stand With Dispenser Tray',
@@ -126,7 +126,7 @@
           'compare'  => 'Rs. 1,999.00',
           'discount' => '55',
           'img'      => 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=600&q=80',
-          'href'     => 'javascript:void(0)',
+          'href'     => 'product.php?slug=stainless-steel-matka-stand',
         ],
         [
           'name'     => 'Sun Protection Mask ☀️',
@@ -134,7 +134,7 @@
           'compare'  => 'Rs. 799.00',
           'discount' => '50',
           'img'      => 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?w=600&q=80',
-          'href'     => 'javascript:void(0)',
+          'href'     => 'product.php?slug=sun-protection-mask',
         ],
       ];
       foreach ($products as $p):
@@ -183,12 +183,12 @@
         </div>
 
       </div>
-      <?php endforeach; ?>
+      <?php endforeach ?>
     </div>
 
     <!-- View all button -->
     <div class="text-center mt-10">
-      <a href="javascript:void(0)"
+      <a href="catalog.php"
         class="inline-block bg-[#552c1c] text-white font-semibold text-sm
                px-8 py-3 rounded-xl hover:bg-[#6b3622] transition-colors">
         View all
